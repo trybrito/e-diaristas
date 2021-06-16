@@ -2,7 +2,7 @@ import SafeEnvironment from 'ui/components/feedback/SafeEnvironment/SafeEnvironm
 import PageTitle from 'ui/components/data-display/PageTitle/PageTitle';
 import UserInformation from 'ui/components/data-display/UserInformation/UserInformation';
 import TextFieldMask from 'ui/components/inputs/TextFieldMask/TextFieldMask';
-import { Button, Typography, Container } from '@material-ui/core';
+import { Button, Typography, Container, CircularProgress } from '@material-ui/core';
 import {
   FormElementsContainer,
   ProfessionalsPaper,
@@ -11,7 +11,17 @@ import {
 import useIndex from 'data/hooks/pages/useIndex';
 
 export default function Home() {
-  const { cep, setCep } = useIndex();
+  const {
+    cep,
+    setCep,
+    validCep,
+    error,
+    wasSearched,
+    isLoading,
+    searchProfessionals,
+    cleaningLadies,
+    remainingCleaningLadies
+  } = useIndex();
 
   return (
     <div>
@@ -30,56 +40,57 @@ export default function Home() {
             onChange={(event) => setCep(event.target.value)}
             fullWidth
           />
-          <Typography color={'error'}>CEP inválido</Typography>
+
+          {error && <Typography color={'error'}>{error}</Typography>}
+
           <Button
             variant={'contained'}
             color={'secondary'}
             sx={{ width: '220px' }}
+            disabled={!validCep || isLoading}
+            onClick={() => searchProfessionals(cep)}
           >
-            Buscar
+            {isLoading ? <CircularProgress size={20} /> : 'Buscar'}
           </Button>
         </FormElementsContainer>
 
-        <ProfessionalsPaper>
-          <ProfessionalsContainer>
-            <UserInformation
-              picture={'https://github.com/ThiagoBrito-Dev.png'}
-              name={'Thiago Brito'}
-              rating={3}
-              description={'São Paulo'}
-            />
-            <UserInformation
-              picture={'https://github.com/ThiagoBrito-Dev.png'}
-              name={'Thiago Brito'}
-              rating={3}
-              description={'São Paulo'}
-            />
-            <UserInformation
-              picture={'https://github.com/ThiagoBrito-Dev.png'}
-              name={'Thiago Brito'}
-              rating={3}
-              description={'São Paulo'}
-            />
-            <UserInformation
-              picture={'https://github.com/ThiagoBrito-Dev.png'}
-              name={'Thiago Brito'}
-              rating={3}
-              description={'São Paulo'}
-            />
-            <UserInformation
-              picture={'https://github.com/ThiagoBrito-Dev.png'}
-              name={'Thiago Brito'}
-              rating={3}
-              description={'São Paulo'}
-            />
-            <UserInformation
-              picture={'https://github.com/ThiagoBrito-Dev.png'}
-              name={'Thiago Brito'}
-              rating={3}
-              description={'São Paulo'}
-            />
-          </ProfessionalsContainer>
-        </ProfessionalsPaper>
+        {wasSearched && (
+          cleaningLadies.length > 0 ? (
+            <ProfessionalsPaper>
+              <ProfessionalsContainer>
+                {cleaningLadies.map((item, index) => {
+                  return (
+                    <UserInformation
+                      key={index}
+                      picture={item.foto_usuario}
+                      name={item.nome_completo}
+                      rating={item.reputacao}
+                      description={item.cidade}
+                    />
+                  );
+                })}
+              </ProfessionalsContainer>
+
+              <Container sx={{ textAlign: 'center' }}>
+                {remainingCleaningLadies > 0 && (
+                  <Typography sx={{ mt: 5 }}>
+                    ...e mais {remainingCleaningLadies}
+                    {remainingCleaningLadies > 1
+                      ? ' profissionais atendem '
+                      : ' profissional atende '}
+                    ao seu endereço.
+                  </Typography>
+                )}
+                <Button variant={'contained'} color="secondary" sx={{ mt: 5 }}>
+                  Contratar um profissional
+                </Button>
+              </Container>
+            </ProfessionalsPaper>
+          ) : (
+            <Typography align={'center'} color={'textPrimary'}>
+              Ainda não temos nenhuma diarista disponível em sua região
+            </Typography>
+          ))}
       </Container>
     </div>
   )
