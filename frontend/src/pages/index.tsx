@@ -8,7 +8,7 @@ import {
   ProfessionalsPaper,
   ProfessionalsContainer
 } from 'ui/styles/pages/index.style';
-import useIndex from 'data/hooks/pages/useIndex';
+import useIndex from 'data/hooks/pages/useIndex.page';
 
 export default function Home() {
   const {
