@@ -1,6 +1,6 @@
 <div align="center">
   <div>
-    <img src="./.github/ediaristas.svg" width="50px" />
+    <img src="./.github/ediaristas.svg" width="75px" />
     <h1>E-Diaristas</h1>
     <p>
       <a href="#-status">Status</a> •
