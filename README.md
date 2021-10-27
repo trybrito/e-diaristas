@@ -1,6 +1,6 @@
 <div align="center">
   <div>
-    <img src="./.github/ediaristas.svg" />
+    <img src="./.github/ediaristas.svg" width="50px" />
     <h1>E-Diaristas</h1>
     <p>
       <a href="#-status">Status</a> •
@@ -49,7 +49,7 @@ Bom, com tudo instalado e pronto, podemos ir para o passo a passo de como rodar 
 
 ### 🕹️ Rodando a aplicação
 
-#### 📌 Geral
+#### Geral
 
 ```bash
 # Primeiramente, clone este repositório com o GIT
