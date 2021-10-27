@@ -2,14 +2,14 @@
   <div>
     <img src="./.github/ediaristas.svg" width="75px" />
     <h1>E-Diaristas</h1>
-    <p>
+    <div>
       <a href="#-status">Status</a> •
       <a href="#-features">Features</a> • 
       <a href="#%EF%B8%8F-pré-requisitos">Pré-requisitos</a> • 
       <a href="#-tecnologias-utilizadas">Tecnologias utilizadas</a> • 
       <a href="#-autor">Autor</a> •
       <a href="#-readme-versions">README versions</a>
-    </p>
+    </div>
     <h3>
       🧼 Uma aplicação ReactJS, Django e React Native para pesquisar e contratar faxineiras que trabalham próximas à você, bem como cadastrar e editar os dados das mesmas.
     </h3>
