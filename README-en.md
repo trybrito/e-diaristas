@@ -167,6 +167,6 @@ $ yarn start
 
 <div>
   <a href="https://github.com/ThiagoBrito-Dev/e-diaristas/blob/main/README.md">Portuguese (pt-br)</a>
-  |   
+  |
   <a href="https://github.com/ThiagoBrito-Dev/e-diaristas/blob/main/README-en.md">English (en-us)</a>
 </div>
