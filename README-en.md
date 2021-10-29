@@ -13,7 +13,7 @@
   </div>
 
   <div>
-    <img src="https://img.shields.io/github/license/ThiagoBrito-Dev/Podcastr?color=6b2aee&style=for-the-badge" />
+    <img src="https://img.shields.io/github/license/trybrito/Podcastr?color=6b2aee&style=for-the-badge" />
     <img src="https://img.shields.io/static/v1?label=version&message=1.0.0&color=6b2aee&style=for-the-badge" />
     <img src="https://img.shields.io/static/v1?label=yarn&message=v1.22.5&color=6b2aee&style=for-the-badge" />
   </div>
@@ -50,7 +50,7 @@ Well, with everything installed and ready, we can proceed to the step by step of
 
 ```bash
 # First of all, clone this repo using GIT
-$ git clone <https://github.com/ThiagoBrito-Dev/e-diaristas>
+$ git clone <https://github.com/trybrito/e-diaristas>
 
 # And access the project folder from the command terminal
 $ cd .../e-diaristas
@@ -140,7 +140,7 @@ $ yarn start
 ### 👨🏽‍🎓 Author
 
 <div align="center">
-  <img src="https://github.com/ThiagoBrito-Dev.png" width="250px" />
+  <img src="https://github.com/trybrito.png" width="250px" />
 
   <br />
 
@@ -166,7 +166,7 @@ $ yarn start
 ### 📚 README versions
 
 <div>
-  <a href="https://github.com/ThiagoBrito-Dev/e-diaristas/blob/main/README.md">Portuguese (pt-br)</a>
+  <a href="https://github.com/trybrito/e-diaristas/blob/main/README.md">Portuguese (pt-br)</a>
   |
-  <a href="https://github.com/ThiagoBrito-Dev/e-diaristas/blob/main/README-en.md">English (en-us)</a>
+  <a href="https://github.com/trybrito/e-diaristas/blob/main/README-en.md">English (en-us)</a>
 </div>
